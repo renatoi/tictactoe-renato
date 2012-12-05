@@ -1,0 +1,25 @@
+﻿Build started 12/3/2012 2:52:38 PM.
+     1>Project "C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\tictactoe-renato\proj.win32\tictactoe-renato.win32.vcxproj" on node 2 (Build target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets(346,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I. /I..\Classes /I"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\cocos2dx" /I"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\cocos2dx\include" /I"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\cocos2dx\kazmath\include" /I"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\cocos2dx\platform\win32" /I"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32" /I"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\cocos2dx\platform\third_party\win32\OGLES" /I"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\external" /I"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\CocosDenshion\include" /nologo /W3 /WX- /O2 /Oy- /D WIN32 /D _WINDOWS /D STRICT /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGSNDEBUG /D _UNICODE /D UNICODE /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release.win32\\" /Fd"Release.win32\vc110.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\AppDelegate.cpp ..\Classes\TicTacToe.cpp ..\Classes\Spot.cpp
+         AppDelegate.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         TicTacToe.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         Spot.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\xlocale(336): warning C4530: C++ exception handler used, but unwind semantics are not enabled. Specify /EHsc
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\Release.win32\tictactoe-renato.win32.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\Release.win32\\" libcocos2d.lib libExtensions.lib opengl32.lib glew32.lib libBox2d.lib libCocosDenshion.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\Release.win32\tictactoe-renato.win32.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\Release.win32\tictactoe-renato.win32.lib" /MACHINE:X86 /SAFESEH "Release.win32\tictactoe-renato.res"
+         Release.win32\AppDelegate.obj
+         Release.win32\TicTacToe.obj
+         Release.win32\Spot.obj
+         Release.win32\VisibleRect.obj
+         Release.win32\main.obj
+         tictactoe-renato.win32.vcxproj -> C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\Release.win32\tictactoe-renato.win32.exe
+     1>Done Building Project "C:\dev\cpp\cocos2d-x\cocos2d-2.0-x-2.0.4\tictactoe-renato\proj.win32\tictactoe-renato.win32.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.79
