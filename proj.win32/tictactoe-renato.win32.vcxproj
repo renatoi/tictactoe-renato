@@ -127,6 +127,7 @@
     <Image Include="..\Resources\CloseNormal.png" />
     <Image Include="..\Resources\CloseSelected.png" />
     <Image Include="..\Resources\HelloWorld.png" />
+    <Image Include="..\Resources\line.png" />
     <Image Include="..\Resources\markO.png" />
     <Image Include="..\Resources\markX.png" />
     <Image Include="..\Resources\veia.png" />

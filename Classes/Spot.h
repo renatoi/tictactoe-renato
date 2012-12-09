@@ -12,7 +12,8 @@ static enum SpotMark
 {
 	kSpotMarkEmpty,
     kSpotMarkO,
-    kSpotMarkX
+    kSpotMarkX,
+    kSpotMarkDisabled
 } sportMark, objSpotMark;
 
 class Spot : public CCSprite, public CCTargetedTouchDelegate

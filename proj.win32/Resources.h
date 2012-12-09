@@ -1,3 +1,4 @@
+static const char s_Line[]    = "line.png";
 static const char s_Board[]				 = "Board.png";
 static const char s_Background[]         = "Veia.png";
 static const char s_MarkX[]              = "markX.png";

@@ -137,7 +137,7 @@ void TicTacToe::drawBoard() {
 	{
 		for (int n = 1; n <= 3; n++)
         {
-            pos = ccp(VisibleRect::center().x + (180*i-360), VisibleRect::center().y + (180*n-360));
+            pos = ccp(VisibleRect::center().x + (180*i-360), VisibleRect::center().y + (180*n-360)*-1);
 
             spot = Spot::spotWithTexture();
             spot->setGridPos(i-1,n-1);
@@ -155,16 +155,86 @@ void TicTacToe::drawBoard() {
 }
 
 void TicTacToe::checkGameState(CCObject* obj) {
-    CCLog(">>>>>>>>>>>>>>> CHECKING GAME STATE");
     Spot* spot = static_cast<Spot*>(obj);
-    CCLog("x: %d", spot->gridPos[0]);
-    CCLog("y: %d", spot->gridPos[1]);
-    //for(int i = 1; i <= 3; i++) {
-    //    for(int n = 1; n <= 3; n++) {
-    //        if (n == 3) CCLog("%d\n", matrixOfSpot[i-1][n-1]->objSpotMark);
-    //        else CCLog("%d", matrixOfSpot[i-1][n-1]->objSpotMark);
-    //    }
-    //}
+    int x = spot->gridPos[0];
+    int y = spot->gridPos[1];
+    int m = spot->objSpotMark;
+    int win = 0;
+
+    CCLog("Mark: %d", m);
+    CCLog("x: %d", x);
+    CCLog("y: %d", y);
+
+    // type
+    for (int i = 0; i < 4; i++) {
+        // check previous
+        if (getSpotMark(x, y, -1, i) == m) {
+            // check previous of previous if any
+            if (getSpotMark(x, y, -2, i) == m) {
+                drawLine(x, y, i);
+                win++;
+                continue;
+            }
+            // check next
+            else if (getSpotMark(x, y, 1, i) == m) {
+                drawLine(x, y, i);
+                win++;
+                continue;
+            }
+        }
+        // check next
+        if (getSpotMark(x, y, 1, i) == m) {
+            // check next of next
+            if (getSpotMark(x, y, 2, i) == m) {
+                drawLine(x, y, i);
+                win++;
+                continue;
+            }
+        }
+    }
+    if (win) {
+        Spot::m_state = kSpotMarkDisabled;
+    }
+}
+
+int TicTacToe::getSpotMark(int x, int y, int step, int type) {
+    // return spot mark or -1 if spot does not exist
+    switch (type) {
+        case 0:
+            return (x+step >= 0 && x+step < matrixOfSpot.size()) ? matrixOfSpot[x+step][y]->objSpotMark : -1;
+        case 1:
+            return (y+step >= 0 && y+step < matrixOfSpot.size()) ? matrixOfSpot[x][y+step]->objSpotMark : -1;
+        case 2:
+            return (y+step >= 0 && y+step < matrixOfSpot.size() && x+step >= 0 && x+step < matrixOfSpot.size()) ? matrixOfSpot[x+step][y+step]->objSpotMark : -1;
+        case 3:
+            return (y-step >= 0 && y-step < matrixOfSpot.size() && x+step >= 0 && x+step < matrixOfSpot.size()) ? matrixOfSpot[x+step][y-step]->objSpotMark : -1;
+    }
+}
+
+void TicTacToe::drawLine(int x, int y, int type) {
+	CCSprite* pLine = CCSprite::create(s_Line);
+    CCPoint pos;
+
+    switch(type) {
+        case 0:
+            pos = ccp(VisibleRect::center().x, matrixOfSpot[x][y]->getPositionY());
+            break;
+        case 1:
+            pLine->setRotation(90);
+            pos = ccp(matrixOfSpot[x][y]->getPositionX(), VisibleRect::center().y);
+            break;
+        case 2:
+            pLine->setRotation(45);
+            pos = ccp(VisibleRect::center().x, VisibleRect::center().y);
+            break;
+        case 3:
+            pLine->setRotation(-45);
+            pos = ccp(VisibleRect::center().x, VisibleRect::center().y);
+            break;
+    }
+
+    pLine->setPosition(pos);
+    this->addChild(pLine, 0);
 }
 
 void TicTacToe::menuCloseCallback(CCObject* pSender)

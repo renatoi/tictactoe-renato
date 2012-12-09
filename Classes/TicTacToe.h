@@ -27,6 +27,10 @@ public:
 
     void checkGameState(CCObject*);
 
+    int getSpotMark(int mod, int c, int step, int type);
+
+    void drawLine(int x, int y, int type);
+
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
 

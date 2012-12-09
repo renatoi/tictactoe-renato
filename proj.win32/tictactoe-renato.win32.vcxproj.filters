@@ -42,6 +42,9 @@
     <Image Include="..\Resources\bitmapFontTest.png">
       <Filter>resource</Filter>
     </Image>
+    <Image Include="..\Resources\line.png">
+      <Filter>resource</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="tictactoe-renato.rc">

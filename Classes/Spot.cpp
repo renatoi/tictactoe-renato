@@ -64,6 +64,9 @@ bool Spot::containsTouchLocation(CCTouch* touch)
 
 bool Spot::ccTouchBegan(CCTouch* touch, CCEvent* event)
 {
+    if (Spot::m_state == kSpotMarkDisabled) {
+        return false;
+    }
     if ( !containsTouchLocation(touch) || wasClicked ) return false;
 	wasClicked = true;
 	if (Spot::m_state == kSpotMarkX)
@@ -88,6 +91,9 @@ CCObject* Spot::copyWithZone(CCZone *pZone)
 
 void Spot::ccTouchEnded(CCTouch* touch, CCEvent* event)
 {   
+    if (Spot::m_state == kSpotMarkDisabled) {
+        return;
+    }
 	if (Spot::m_state == kSpotMarkX)
     {
 		CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect(std::string(CCFileUtils::sharedFileUtils()->fullPathFromRelativePath(s_SoundFart)).c_str());
